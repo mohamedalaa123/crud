@@ -1,0 +1,12 @@
+
+<div *ngIf="!consumed">
+    <div class="alert alert-primary" role="alert">
+       there is no data currently
+      </div>
+</div>
+
+<div *ngIf="persons.length > 0">
+    <list-view-persons [allPersons]="persons"></list-view-persons>
+</div>
+
+

@@ -1,0 +1,35 @@
+
+
+
+<div class="row">
+    <div class="col" *ngFor="let person of allPersons">
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{person.avatar}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Id: {{person.id}}</h5>
+
+                <h5 class="card-title">
+
+                    <a routerLink="/detail" [state]="{ currentPerson: person }">
+                        Name: {{person.name}}
+                    </a>
+
+
+                </h5>
+                <p class="card-text">Email :{{person.email}}</p>
+                <p class="card-text">Country: {{person.country}}</p>
+                <p class="card-text">Age : {{person.dob | age}}</p>
+
+                <a href="#" class="btn btn-primary">Edit</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+

@@ -1,0 +1,85 @@
+<form (ngSubmit)="onSubmit()" #personForm="ngForm">
+
+
+    <div class="mb-3 row">
+        <label for="" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" required class="form-control text-center" name="email" [(ngModel)]="model.email"
+                #email="ngModel" placeholder="Enter Your Email">
+
+
+        </div>
+        <span [hidden]="email.valid || email.pristine" class="alert alert-danger">Email is required </span>
+
+    </div>
+
+
+    <div class="mb-3 row">
+        <label for="" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" required name="name" [(ngModel)]="model.name" #name="ngModel"
+                class="form-control text-center" placeholder="Enter Your Name">
+        </div>
+
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is required </div>
+    </div>
+
+
+    <div class="mb-3 row">
+        <label for="" class="col-sm-2 col-form-label">Country</label>
+        <div class="col-sm-10">
+            <input type="text" required name="country" [(ngModel)]="model.country" #country="ngModel"
+                class="form-control text-center" placeholder="Enter Your country">
+        </div>
+
+        <div [hidden]="country.valid || country.pristine" class="alert alert-danger">country is required </div>
+    </div>
+
+
+
+    <div class="mb-3 row">
+        <label for="" class="col-sm-2 col-form-label">Avatar</label>
+        <div class="col-sm-10">
+            <input type="text" required name="avatar" [(ngModel)]="model.avatar" #avatar="ngModel"
+                class="form-control text-center" placeholder="Enter Your Avatar">
+        </div>
+
+        <div [hidden]="avatar.valid || avatar.pristine" class="alert alert-danger">Avatar is required </div>
+    </div>
+
+
+
+    <div class="mb-3 row">
+        <label for="" class="col-sm-2 col-form-label">Date Of Birth</label>
+        <div class="col-sm-10">
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <!-- #docregion toggle -->
+                <input required name="dob" [(ngModel)]="model.dob" #dob="ngModel" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <!-- #enddocregion toggle -->
+            </mat-form-field>
+
+        </div>
+        <div [hidden]="dob.valid || dob.pristine" class="alert alert-danger">Email is required </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="row">
+        <div class="col">
+            <input type="submit" class="btn btn-primary" [disabled]="!personForm.form.valid" />
+        </div>
+
+    </div>
+
+
+
+</form>
